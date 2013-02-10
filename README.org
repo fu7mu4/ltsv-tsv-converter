@@ -1,0 +1,85 @@
+#+TITLE: README of ltsv-tsv converter
+#+AUTHOR: fu7mu4
+#+EMAIL: fu7mu4@gmail.com
+
+* What is ltsv-tsv converter
+
+  This is a text simple format converter among LTSV(labelled tab-separated values) and TSV(tab-separated values) format with header included labels in first line on its file.
+  If you want to know detail of ltsv, see http://ltsv.org/
+
+* require
+
+  perl only (author's perl version is 5.12.4)
+
+* distribution
+
+  |---------------+---------------------------------------+----------------------------------|
+  | file          | detail                                | usage                            |
+  |---------------+---------------------------------------+----------------------------------|
+  | README.org    | small description                     | open by text-editor              |
+  | License       | License (perl artistic license)       | open by text-editor              |
+  | ltsv2tsvwh.pl | convert ltsv format to tsv(wh) format | ltsv2tsvwh.pl foo.ltsv > foo.tsv |
+  | tsvwh2ltsv.pl | convert tsv(wh) format to ltsv format | tsvwh2ltsv.pl foo.tsv > foo.ltsv |
+  |---------------+---------------------------------------+----------------------------------|
+
+* convert
+
+  when you convert in each other format, if some values are missing, they are treated as null string "".
+
+** sample of labelled tab-separated values format
+
+   #+BEGIN_SRC ltsv
+   foo:1	bar:2	baz:3
+   foo:4	bar:5	baz:6
+   foo:7	bar:8	baz:9
+   #+END_SRC 
+
+** sample of tab-separated values format (with header)
+
+   #+BEGIN_SRC tsv
+   foo	bar	baz
+   1	2	3
+   4	5	6
+   7	8	9
+   #+END_SRC 
+
+* これは何？
+
+これは、LTSVとTSV形式を相互変換するツールです。TSV形式の先頭の行をheaderとしこれらをLTSVのラベルとして扱います。
+もし、LTSV形式の詳細が知りたければ、 http://ltsv.org/ を参照してください。
+
+* 必要なもの
+
+  perl のみ (perl 5.12.4で動作確認)
+
+* 配布物
+
+  |---------------+------------------------------------+----------------------------------|
+  | ファイル      | 説明                               | 使用法                           |
+  |---------------+------------------------------------+----------------------------------|
+  | README.org    | これの説明                         | テキストエディタで開く           |
+  | License       | ライセンス (perl artistic license) | テキストエディタで開く           |
+  | ltsv2tsvwh.pl | ltsv から tsv への変換             | ltsv2tsvwh.pl foo.ltsv > foo.tsv |
+  | tsvwh2ltsv.pl | tsv から ltsv への変換             | tsvwh2ltsv.pl foo.tsc > foo.ltsv |
+  |---------------+------------------------------------+----------------------------------|
+
+* 変換
+
+  フォーマットの変換時に、いくつかの値がない場合、それらの値は空文字列 ""として変換されます。
+
+** LTSV:labelled tab-separated valuesフォーマットの例
+
+   #+BEGIN_SRC ltsv
+   foo:1	bar:2	baz:3
+   foo:4	bar:5	baz:6
+   foo:7	bar:8	baz:9
+   #+END_SRC 
+
+** TSV:tab-separated values フォーマット(ヘッダ行あり)の例
+
+   #+BEGIN_SRC tsv
+   foo	bar	baz
+   1	2	3
+   4	5	6
+   7	8	9
+   #+END_SRC 
